@@ -1,0 +1,9 @@
+colored==1.4.2
+mutagen==1.44.0
+argparse==1.4.0
+requests==2.23.0
+natsort==7.0.1
+piexif==1.1.3
+fake_useragent==0.1.11
+ffmpy==0.2.3
+mpegdash==0.2.0
