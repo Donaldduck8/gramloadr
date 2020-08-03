@@ -4,7 +4,7 @@ A simple Instagram® downloader designed for archivists, written in Python 3.
 ___
 
 ## Setup
-Clone this repository, install dependencies with `pip3 install -r requirements.txt` and login with `gramloadr.py --username Username --password Password`. Edit the configuration to your liking, then run `gramloadr.py`. Gramloadr will download everything it can by default, but you can optionally specify which modules you would like to run like so: `gramloadr.py -l -s`.
+Clone this repository, install dependencies with `pip3 install -r requirements.txt` and login with `gramloadr.py --username Username --password Password`. A default configuration file will automatically be created. Edit the configuration to your liking, then run `gramloadr.py`. Gramloadr will download everything it can by default, but you can optionally specify which modules you would like to run like so: `gramloadr.py -l -s`.
 
 ___
 
