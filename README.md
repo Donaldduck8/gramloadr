@@ -9,4 +9,4 @@ Clone this repository, install dependencies with `pip3 install -r requirements.t
 ___
 
 ## Configuration
-Gramloadr consists of 4 modules: Highlights/IGTV, Livestreams, Pages and Stories. You can customize each modules's print color, cooldown period and account selection by editing the configuration stored in `config.json`. You can also customize the directory in which to store all downloaded files. Please note that the contents of `config.json` must be valid JSON.
+Gramloadr consists of 4 modules: Highlights/IGTV, Livestreams, Pages and Stories. You can customize each modules's print color, cooldown period and account selection by editing the configuration stored in `config.json`. By default, Gramloadr will download every user you follow, but this can be limited to whichever subset is specified in the configuration. You can also customize the directory in which to store all downloaded files. Please note that the contents of `config.json` must be valid JSON.
