@@ -35,20 +35,6 @@ def grab_pages(sessions, username_list, user_dir):
         if not os.path.isdir(user_posts_directory):
             os.makedirs(user_posts_directory)
 
-        # Get biography and full name
-        timestamp = int(datetime.datetime.now().timestamp())
-        biography = user['biography']
-        full_name = user['full_name']
-
-        if 'public_email' in user:
-            email = user['public_email']
-
-        if 'public_phone_number' in user:
-            phone_number = user['public_phone_number']
-
-        if 'external_url' in user:
-            external_url = user['external_url']
-
         # Update page_info.json if it exists, create and save it if it doesn't exist
         page_info_json_path = os.path.join(user_directory, "page_info.json")
         if os.path.isfile(page_info_json_path):
@@ -76,11 +62,22 @@ def grab_pages(sessions, username_list, user_dir):
                 user_info_dict[field_name].append(new_obj)
                 return
 
+        # Get biography and full name
+        timestamp = int(datetime.datetime.now().timestamp())
+        biography = user['biography']
+        full_name = user['full_name']
+
         update_dict(user_info_dict, 'full_name', timestamp, full_name)
         update_dict(user_info_dict, 'biography', timestamp, biography)
-        update_dict(user_info_dict, 'email', timestamp, email)
-        update_dict(user_info_dict, 'phone_number', timestamp, phone_number)
-        update_dict(user_info_dict, 'external_url', timestamp, external_url)
+
+        if exists(user, ['public_email']):
+            update_dict(user_info_dict, 'email', timestamp, user['public_email'])
+
+        if exists(user, ['public_phone_number']):
+            update_dict(user_info_dict, 'phone_number', timestamp, user['public_phone_number'])
+
+        if exists(user, ['external_url']):
+            update_dict(user_info_dict, 'external_url', timestamp, user['external_url'])
 
         # Write dictionary
         with open(page_info_json_path, 'w+', encoding='utf8') as user_dict_file:
